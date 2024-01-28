@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Formatting a biography</title>
+  <style>
+    /* 文件：layers1.css */
+
+    /* 未分层的样式 */
+    body {
+      color: #333;
+    }
+
+    /* 创建第一个层：`layout` */
+    @layer layout {
+      main {
+        display: grid;
+      }
+    }
+
+    /* 创建第二个层：一个未命名的匿名层 */
+    @layer {
+      body {
+        margin: 0;
+      }
+    }
+
+    /* 创建第三和第四个层：`theme` 和 `utilities` */
+    @layer theme, layout, utilities;
+
+    /* 向已经存在的 `layout` 层添加样式 */
+    @layer layout {
+      main {
+        color: #000;
+      }
+    }
+
+    /* 创建第五个层：一个未命名的匿名层 */
+    @layer {
+      body {
+        margin: 1vw;
+      }
+    }
+
+    /* @layer A, B; */
+    @layer B, A
+
+    h1 {
+      color: orange;
+      background-color: green;
+      text-decoration: overline pink !important;
+      box-shadow: 5px 5px lightgreen !important;
+    }
+
+    @layer A {
+      h1 {
+        color: grey;
+        background-color: black !important;
+        text-decoration: line-through grey;
+        box-shadow: -5px -5px lightblue !important;
+        font-style: normal;
+        font-weight: normal !important;
+      }
+    }
+
+    @layer B {
+      h1 {
+        color: aqua;
+        background: yellow !important;
+        text-decoration: underline aqua;
+        box-shadow: -5px 5px magenta !important;
+        font-style: italic;
+        font-weight: bold !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color: yellow; background-color: maroon !important;">Jane Doe</h1>
+  <div class="job-title">Web Developer</div>
+  <p>
+    Far far away, behind the word mountains, far from the countries Vokalia
+    and Consonantia, there live the blind texts. Separated they live in
+    Bookmarksgrove right at the coast of the Semantics, a large language
+    ocean.
+  </p>
+
+  <p>
+    A small river named Duden flows by their place and supplies it with the
+    necessary regelialia. It is a paradisematic country, in which roasted
+    parts of sentences fly into your mouth.
+  </p>
+
+  <h2>Contact information</h2>
+  <ul>
+    <li>
+      Email:
+      <a href="mailto:jane@example.com">jane@example.com</a>
+    </li>
+    <li>
+      Web:
+      <a href="https://example.com">https://example.com</a>
+    </li>
+    <li>Tel: 123 45678</li>
+  </ul>
+
+  <blockquote>
+    <p>This blockquote is styled</p>
+  </blockquote>
+
+  <blockquote class="fix-this">
+    <p>This blockquote is not styled</p>
+  </blockquote>
+
+  <h3>Heading with no class</h3>
+  <h3 class="small">Heading with class of small</h3>
+  <h3 class="bright">Heading with class of bright</h3>
+
+  <p class="better">This is a paragraph.</p>
+  <p class="better" id="winning">One selector to rule them all!</p>
+</body>
+
+</html>
