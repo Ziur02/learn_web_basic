@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Formatting a biography</title>
+  <style>
+    h1 {
+      writing-mode: vertical-rl;
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+
+    .wrapper {
+      display: flex;
+    }
+
+    .box {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      margin: 10px;
+      inline-size: 150px;
+    }
+
+    .horizontal {
+      writing-mode: horizontal-tb;
+    }
+
+    .vertical {
+      writing-mode: vertical-rl;
+    }
+
+    .logical {
+      margin-block-start: 20px;
+      padding-inline-end: 2em;
+      padding-block-start: 2px;
+      border-block-start: 5px solid pink;
+      border-inline-end: 10px dotted rebeccapurple;
+      border-block-end: 1em double orange;
+      border-inline-start: 1px solid black;
+    }
+
+    .physical {
+      margin-top: 20px;
+      padding-right: 2em;
+      padding-top: 2px;
+      border-top: 5px solid pink;
+      border-right: 10px dotted rebeccapurple;
+      border-bottom: 1em double orange;
+      border-left: 1px solid black;
+    }
+
+    .img-box {
+      inline-size: 200px;
+      writing-mode: horizontal-tb;
+      margin: 10px;
+      padding: 0.5em;
+      border: 1px solid #ccc;
+    }
+
+    img {
+      float: inline-start;
+      margin-inline-end: 10px;
+      margin-block-end: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Play with writing modes</h1>
+  <div class="wrapper">
+    <div class="box horizontal">
+      <h2>Heading</h2>
+      <p>A paragraph. Demonstrating Writing Modes in CSS.</p>
+      <p>These boxes have a width.</p>
+    </div>
+    <div class="box vertical">
+      <h2>Heading</h2>
+      <p>A paragraph. Demonstrating Writing Modes in CSS.</p>
+      <p>These boxes have a width.</p>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="box physical">
+      <h2>Physical Properties</h2>
+      <p>A paragraph. Demonstrating Logical Properties in CSS.</p>
+    </div>
+    <div class="box logical">
+      <h2>Logical Properties</h2>
+      <p>A paragraph. Demonstrating Logical Properties in CSS.</p>
+    </div>
+  </div>
+
+  <div class="img-wrapper">
+    <div class="img-box img-logical">
+      <img src="big-star.png" alt="star">
+      <p>This box uses logical properties. The star image has been floated inline-start, it also has a margin on the inline-end and block-end.</p>
+    </div>
+  </div>
+</body>
+
+</html>
